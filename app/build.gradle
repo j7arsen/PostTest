@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.j7arsen.postproject"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField("String", "TOKEN", "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImRiYTYzMGE0YzIxYWZlNzRhYTVlNTgwZjBiZjliMDQ1YThmYzY4NWViMjE0ZmFmZTY4ZDAzMGQzZjdiNThhMDg3M2M1MzU3MTNjNjIxNmE5In0.eyJhdWQiOiIyIiwianRpIjoiZGJhNjMwYTRjMjFhZmU3NGFhNWU1ODBmMGJmOWIwNDVhOGZjNjg1ZWIyMTRmYWZlNjhkMDMwZDNmN2I1OGEwODczYzUzNTcxM2M2MjE2YTkiLCJpYXQiOjE1Njg2MzI3MDEsIm5iZiI6MTU2ODYzMjcwMSwiZXhwIjoxNjAwMjU1MTAxLCJzdWIiOiIzMDQ2MTAiLCJzY29wZXMiOltdfQ.BB_dmBJDg-NO72-HSqudwt3Ql4kO7uyVjx4sMTpMURpJZfRpd1-7wUjfERWumhp1JcQzFwiRsihKTLN_rVeLNzspcXUHtp6OTRBEPowrzhQq3tB8-mQxTL-8KV2QPOaDmYufoowtCaxbTp7ciKs7Ybs4t9XYfGQoyBurWJsspOU_ikvWHlZViHZQjs82aAIblC-XyQh94sJz0_3mDHQPcGhlpBXp-RMi-hghGZsFS_ZhugSKvz5bKeR0bzDTui1baUoGnCFOWwSDn_tek1rSpAIdOe5WK1J2Opvjx7kjq7ycjbDy8ZNurWhEExa8rrFRRHlzN2AwiWkwAd6BmMHI_nVhgGbqUzDg88_393nX8T8Fdrek-IU1k461MzAycsRiKTj_vRXVyNie25v-wg3aQ9PciB-zQH1JbBM6wPmavwi-5zWD5Ab5m3FGijBviPCnN2Q-H9aBN3zPLYrYHG305Rmq6DHc_QoC_GYISk_BbbU3_DrvnUml2ey07B0bprVKJPZWYE9LHW5A3k4-yV3eAR5rf-JcQjCigONs0lkcA9uu91R-n3VxmtIyOIO76SLdkiZEebV8yvIC696zrxPMzNktoDUc-SP359MZDHIvmtL2uyy3s83n3LtgwgamZC4e6_-GmU89npACLD5hK7-lVXeVRGAKZuhTHKWuKbEqLJ8\"")
+            buildConfigField("int", "TEST_POST_ID", "841")
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':data')
+    implementation project(':domain')
+
+    //support
+    implementation "androidx.appcompat:appcompat:${rootProject.ext.appCompatX}"
+    implementation "androidx.constraintlayout:constraintlayout:${rootProject.ext.constraint}"
+    implementation "androidx.recyclerview:recyclerview:${rootProject.ext.recyclerview}"
+    //test
+    testImplementation "junit:junit:${rootProject.ext.junit}"
+    androidTestImplementation "androidx.test.ext:junit:${rootProject.ext.testJunit}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.ext.testEspresso}"
+    //MVP
+    implementation "com.github.moxy-community:moxy:${rootProject.ext.moxy}"
+    implementation "com.github.moxy-community:moxy-androidx:${rootProject.ext.moxy}"
+    implementation "com.github.moxy-community:moxy-material:${rootProject.ext.moxy}"
+    annotationProcessor "com.github.moxy-community:moxy-compiler:${rootProject.ext.moxy}"
+    //DI
+    implementation "com.google.dagger:dagger:${rootProject.ext.dagger2}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.dagger2}"
+    implementation "com.jakewharton:butterknife:${rootProject.ext.butterKnife}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterKnife}"
+    //Network
+    implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.retrofit}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${rootProject.ext.retrofit}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${rootProject.ext.okhttp}"
+    implementation "com.squareup.okhttp3:okhttp:${rootProject.ext.okhttp}"
+    //RX
+    implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxAndroid}"
+    implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxJava}"
+    //Fresco
+    implementation "com.facebook.fresco:fresco:${rootProject.ext.fresco}"
+}

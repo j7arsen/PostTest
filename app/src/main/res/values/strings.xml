@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">PostProject</string>
+
+    <string name="screen_title">Статистика поста</string>
+
+    <!--Errors-->
+    <string name="message_error_connect">Отсутствует соединение с интернетом</string>
+    <string name="message_error_default">Сервер не доступен. Попробуйте позже.</string>
+    <string name="message_error_socket">Слишком медленный интернет. Попробуйте другой.</string>
+    <string name="message_technical_works">В данный момент на сервере проводятся технические работы</string>
+
+    <string name="ok">Ок</string>
+    <string name="retry">Повторить</string>
+    <string name="error">Ошибка</string>
+    <string name="label_no_data">Нет данных</string>
+
+    <string name="post_view_count">Просмотры %s</string>
+    <string name="post_like_count">Лайки %s</string>
+    <string name="post_repost_count">Репосты %s</string>
+    <string name="post_comment_count">Коментаторы %s</string>
+    <string name="post_mention_count">Отметки %s</string>
+
+
+</resources>

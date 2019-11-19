@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/include_toolbar" />
+
+    <ScrollView
+        android:id="@+id/sv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/navigation_bar"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/activity_margin_half"
+                android:background="@drawable/bg_block"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/activity_margin"
+                android:paddingTop="@dimen/activity_margin_fourth"
+                android:paddingRight="@dimen/activity_margin"
+                android:paddingBottom="@dimen/activity_margin_fourth">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@android:drawable/ic_menu_view" />
+
+                <TextView
+                    android:id="@+id/tv_post_view_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/activity_margin_fourth"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_16"
+                    tools:text="View 44" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_block_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.j7arsen.postproject.ui.block.like.PostLikeBlock
+                    android:id="@+id/b_post_like_persons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.j7arsen.postproject.ui.block.comment.PostCommentBlock
+                    android:id="@+id/b_post_comment_persons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.j7arsen.postproject.ui.block.mention.PostMentionBlock
+                    android:id="@+id/b_post_mention_persons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.j7arsen.postproject.ui.block.repost.PostRepostBlock
+                    android:id="@+id/b_post_repost_persons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.j7arsen.postproject.view.progress.ProgressView
+        android:id="@+id/pv_load"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/navigation_bar"
+        android:visibility="gone"></com.j7arsen.postproject.view.progress.ProgressView>>
+
+
+</RelativeLayout>
